@@ -144,7 +144,7 @@ LOGIN_URL = '/saml/login'
 
 APPEND_SLASH = True
 
-'''
+
 SAML_SP = {
     "entityId": "https://127.0.0.1:8000/saml/metadata/",
     "assertionConsumerService": {
@@ -195,4 +195,3 @@ SAML_SECURITY = {
     "signatureAlgorithm": "http://www.w3.org/2000/09/xmldsig#rsa-sha1",
     "digestAlgorithm": "http://www.w3.org/2000/09/xmldsig#sha1"
 }
-'''
