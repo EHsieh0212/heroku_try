@@ -14,10 +14,10 @@
             <a class="nav-link" aria-current="page" href="{% url 'register_user' %}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'django_saml:login' %}">Login_SSO</a>
+            <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login_SSO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'django_saml:logout' %}">Logout_SSO</a>
+            <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout_SSO</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
@@ -25,7 +25,7 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
           </li>
-          
+
         </ul>
       </div>
         <form class="d-flex" method=POST action="{% url 'search_order' %}">
