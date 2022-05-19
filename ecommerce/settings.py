@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3x&^=we=xgdx$xt-z)vxvzai*8b9f!2=%%*44ngc6_4(9gft+t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000', 'ecommerce-elaine.herokuapp.com']
 
 import os
 #SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
@@ -33,7 +33,6 @@ import os
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'eco',
     'members',
     'django_saml',
+    'whitenoise.runserver_nostatic',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -54,13 +54,16 @@ AUTHENTICATION_BACKENDS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
 
 ROOT_URLCONF = 'ecommerce.urls'
 
@@ -159,7 +162,7 @@ SAML_SP = {
     "privateKey": "<can also be loaded by file, see SAML_BASE_DIRECTORY>"
 }
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 SAML_IDP = {
