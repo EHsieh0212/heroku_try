@@ -1,0 +1,36 @@
+{% extends 'eco/base.html' %}
+{% block content %}
+
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="2"> Order</th>
+            </tr>
+            <tr>
+                <th style="width: 50%;">ID</th>
+                <th>Customer</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle" id="tbody-ajax">
+            {% if searched4 %}        
+                {% for i in orders %}
+                    <tr>
+                        <th><a href="{% url 'list_order' i.id %}">{{ i.id }}</a></th>
+                        <th>{{ i.customer.name }}</th>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <th>No Order</th>
+                    <th></th>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+{% endblock %}

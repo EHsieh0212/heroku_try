@@ -1,0 +1,26 @@
+{% extends 'eco/base.html' %}
+{% block content %}
+<center>
+    <h3> Order Content </h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>{{ ordering.id }}</th>
+            </tr>
+            <tr>
+                <th>Customer</th>
+                <th>{{ ordering.customer }}</th>
+            </tr>
+            <tr>
+                <th>Items</th>
+                <th>{{ ordering.order }}</th>
+            </tr>
+        </thead>
+    </table>
+
+
+</center>
+
+{% endblock %}
