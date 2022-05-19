@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3x&^=we=xgdx$xt-z)vxvzai*8b9f!2=%%*44ngc6_4(9gft+t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1:8000', 'ecommerce-elaine.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1:8000', 'ecommerce-ecommerce.herokuapp.com']
 
 import os
 #SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
